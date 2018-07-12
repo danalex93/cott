@@ -59,3 +59,6 @@ Thumbs.db
 
 # Visual Code Studio
 /.vscode
+
+# Ignore Istanbul files
+.nyc_output
