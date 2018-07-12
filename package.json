@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "after-30-days": "node --require babel-register ./scripts/after_30_days.js",
+    "after-30-days-with-file": "node --require babel-register ./scripts/after_30_days_with_file.js",
     "test": "nyc mocha --require babel-register ./src/*/*.test.js"
   },
   "repository": {
@@ -29,5 +30,8 @@
     "chai": "^4.1.2",
     "mocha": "^5.2.0",
     "nyc": "^12.0.2"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security"
   }
 }
