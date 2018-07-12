@@ -1,4 +1,4 @@
-class CarInsurance {
+export default class CarInsurance {
   constructor(products = []) {
     this.products = products;
   }
@@ -56,5 +56,3 @@ class CarInsurance {
     return this.products;
   }
 }
-
-export default CarInsurance;

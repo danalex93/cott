@@ -1,6 +1,6 @@
 import {  expect, should } from 'chai';
 
-import Product from './car_insurance';
+import Product from './product';
 
 describe("Product", () => {
 
