@@ -12,7 +12,7 @@ describe("Product", () => {
   it("should never have a negative price", () => {
     let product = new Product("Default", 100, 0);
     product.update();
-    expect(product.price).to.be.greaterThan(0);
+    expect(product.price).to.not.be.lessThan(0);
   });
 
   it("should degrade price if product isn't \"Super Sale\"", () => {
@@ -25,10 +25,14 @@ describe("Product", () => {
     let product = new Product("Super Sale", 5, 20);
     product.update();
     expect(product.price).to.equal(18);
+    
+    product = new Product("Super Sale", 5, 1);
+    product.update();
+    expect(product.price).to.equal(0);
   });
 
   it("should never have a price bigger than 50 if product isn't \"Mega Coverage\"", () => {
-    let product = new Product("Default", 100, 50);
+    let product = new Product("Full Coverage", 100, 50);
     product.update();
     expect(product.price).to.not.be.greaterThan(50);
   })
@@ -52,7 +56,7 @@ describe("Product", () => {
   });
 
   it('should drop price to 0 if product is "Special Full Coverage" and sellIn is 0 or less', () => {
-    let product = new Product("Special Full Coverage", 11, 1);
+    let product = new Product("Special Full Coverage", 1, 20);
     product.update();
     expect(product.price).to.equal(0);
   });
