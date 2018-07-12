@@ -3,11 +3,17 @@ import {  expect, should } from 'chai';
 import Product from './product';
 
 describe("Product", () => {
-  it("should decrease the days left on update", () => {
+  it("should decrease the days left on update if isn't a \"Mega Coverage\"", () => {
     let product = new Product("Default", 5, 10);
     product.update();
     expect(product.sellIn).to.equal(4);
   });
+
+  it("should not decrease days when product is \"Mega Coverage\"", () => {
+    let product = new Product("Mega Coverage", 0, 10);
+    product.update();
+    expect(product.sellIn).to.equal(0);
+  })
 
   it("should never have a negative price", () => {
     let product = new Product("Default", 100, 0);
