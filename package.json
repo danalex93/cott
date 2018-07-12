@@ -4,6 +4,7 @@
   "description": "ComparaOnline Software Engineer Test",
   "main": "index.js",
   "scripts": {
+    "after-30-days": "node --require babel-register ./scripts/after_30_days.js",
     "test": "nyc mocha --require babel-register ./src/*/*.test.js"
   },
   "repository": {
