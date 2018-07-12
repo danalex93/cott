@@ -33,6 +33,12 @@ describe("Product", () => {
     expect(product.price).to.not.be.greaterThan(50);
   })
 
+  it('should increase price by 1 if product is "Special Full Coverage" and sellIn is bigger than 10', () => {
+    let product = new Product("Special Full Coverage", 12, 20);
+    product.update();
+    expect(product.price).to.equal(21);
+  });
+
   it("should increase price by 2 if product is \"Special Full Coverage\" and sellIn is between 10 and 6", () => {
     let product = new Product("Special Full Coverage", 11, 20);
     product.update();
