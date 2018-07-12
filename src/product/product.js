@@ -6,7 +6,8 @@ export default class Product {
   }
 
   update(){
-    this.sellIn--;
+    if (this.name !== "Mega Coverage")
+      this.sellIn--;
 
     switch (this.name) {
       case "Mega Coverage":
