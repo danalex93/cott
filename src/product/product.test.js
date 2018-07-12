@@ -61,6 +61,12 @@ describe("Product", () => {
     expect(product.price).to.equal(23);
   });
 
+  it('should have a bigger price than 50 when "Special Full Coverage"', () => {
+    let product = new Product("Special Full Coverage", 3, 50);
+    product.update();
+    expect(product.price).to.equal(50);
+  });
+
   it('should drop price to 0 if product is "Special Full Coverage" and sellIn is 0 or less', () => {
     let product = new Product("Special Full Coverage", 1, 20);
     product.update();
